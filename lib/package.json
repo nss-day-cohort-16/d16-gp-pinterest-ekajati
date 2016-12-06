@@ -1,0 +1,36 @@
+{
+  "name": "mushroom-mania",
+  "version": "0.1.0",
+  "description": "angular-practice",
+  "main": "app/app.js",
+  "readme": "../README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onodric/m6-04-shrooms-01.git"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "Ben Marks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onodric/m6-04-shrooms-01/issues"
+  },
+  "homepage": "https://github.com/Onodric/m6-04-shrooms-01#readme",
+  "devDependencies": {
+    "angular": "^1.6.0-rc.2",
+    "angular-route": "^1.5.9",
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^3.1.1",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^1.0.1"
+  }
+}

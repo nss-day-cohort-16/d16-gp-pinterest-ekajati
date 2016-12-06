@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Permanent+Marker|Proza+Libre|Raleway");
+body {
+  width: 100%;
+  font: 1em "Raleway", sans-serif; }
+
+#wrapper {
+  width: 90%;
+  max-width: 1280px;
+  background: #ffdeaa;
+  height: 85vh;
+  overflow-y: auto;
+  margin: 10vh auto 5vh auto; }
+  #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5 {
+    font-family: "Permanent Marker", cursive; }
+
+#page-head {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  background: #553400;
+  color: #805615;
+  box-shadow: inset 0 0 3em rgba(20, 49, 83, 0.8); }
+  #page-head h1 {
+    color: #805615;
+    font-size: 4em;
+    font-weight: bolder;
+    margin-bottom: -.1em;
+    margin-top: .25em;
+    text-shadow: 0.05em -0.05em 0.1em rgba(5, 28, 56, 0.8); }
+
+#page-foot {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 5vh;
+  background: #553400;
+  color: #805615;
+  box-shadow: inset 0 0 3em rgba(20, 49, 83, 0.8);
+  text-align: center; }
+  #page-foot p {
+    font-weight: bold;
+    margin: auto; }
+
+.shroomCard {
+  background: rgba(116, 139, 167, 0.8);
+  box-shadow: 0 2px 5px rgba(20, 49, 83, 0.8);
+  height: 30vh;
+  border-radius: 1em;
+  margin-top: 1em; }
+
+/*# sourceMappingURL=style.css.map */

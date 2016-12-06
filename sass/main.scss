@@ -1,0 +1,12 @@
+@import 'template';
+
+$threeD: 0 2px 5px;
+$roundy: 1em;
+
+.shroomCard {
+  background: $rgba-second4;
+  box-shadow: $threeD $rgba-second1;
+  height: 30vh;
+  border-radius: $roundy;
+  margin-top: 1em;
+}
