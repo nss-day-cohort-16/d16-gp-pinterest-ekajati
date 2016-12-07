@@ -8,13 +8,13 @@ app.controller("addPinCtrl", function($scope, authFactory) {
 
       $scope.addNewPin = {
         description: "",
-        URL: "",
+        url: "",
         board: "",
         uid: authFactory.loginUser
       };
 
       $scope.addNewPin = function() {
-        console.log("you clicked on add new pin:", $scope.addNewPin);
+        console.log("you clicked on Save new pin:", $scope.addNewPin);
 
       };
     });
