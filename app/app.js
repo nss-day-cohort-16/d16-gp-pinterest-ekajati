@@ -19,10 +19,16 @@ app.config(function($routeProvider){
 	.when("/allPins", {
 		templateUrl: "partials/allPins.html",
 		controller: "allPinsCtrl"
-	}).when("/login", {
+	})
+	.when("/board/:boardId", {
+		templateUrl: "partials/boardPins.html",
+		controller: "BoardPinsCtrl"		
+	})
+	.when("/login", {
 		templateUrl: "partials/login.html",
 		controller: "loginCtrl"
-	}).otherwise("/login");
+	})
+	.otherwise("/login");
 });
 
 app.run(function($location, FBCreds){

@@ -1,10 +1,14 @@
 "use strict";
 
-app.factory("authFactory", function($q){
+app.factory("authFactory", function($q, userFactory){
 	let currentUser = null;
 
 	let createUser = function(userObj){
-		return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password);
+		return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
+			.then(function(userObj){
+console.log("createUser userObj: ", userObj);
+				userFactory.setUpUser(userObj);
+			});
 	};
 
 	let loginUser = function(userObj){
