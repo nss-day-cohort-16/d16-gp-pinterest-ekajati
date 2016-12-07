@@ -3,10 +3,14 @@
 $threeD: 0 2px 5px;
 $roundy: 1em;
 
-.shroomCard {
+.pinCard {
   background: $rgba-second4;
   box-shadow: $threeD $rgba-second1;
-  height: 30vh;
+  // height: 30vh;
   border-radius: $roundy;
   margin-top: 1em;
+}
+
+.pinCard img {
+  width: 100%;
 }
