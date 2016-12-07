@@ -5,10 +5,8 @@ app.factory("pinStorage", function($http, FBCreds, $q){
 
 	let getAllPins = function(){
 		return $q((resolve, reject) => {
-console.log("URL is correct: ", FBCreds.databaseURL);
 			$http.get(`${FBCreds.databaseURL}/pins.json`)
 			.success((pinsObj) => {
-console.log("pinsObj: ", pinsObj);
 				let pinCollection = pinsObj;
 				let tempArray = [];
 				Object.keys(pinCollection).forEach((key) => {
@@ -59,12 +57,6 @@ console.log("pinsObj: ", pinsObj);
 			});
 		});
 	};
-
-	let getBoardName = function(boardId){
-		return $q((resolve, reject)=>{
-			
-		})
-	}
 
   return {
     getAllPins,

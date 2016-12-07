@@ -20,12 +20,12 @@ app.factory("userFactory", function ($q, FBCreds, $http) {
     let newUser = {email: userObj.email, uid: userObj.uid};
     return $q((resolve, reject)=>{
       $http.post(`${FBCreds.databaseURL}/users.json`, angular.toJson(newUser))
-      .then((obj)=>{
+      .success((obj)=>{
         createFirstBoard(newUser.uid);
         resolve(obj);
-      // })
-      // .error((error)=>{
-      //   reject(error);
+      })
+      .error((error)=>{
+        reject(error);
       });
     });
   };
@@ -34,18 +34,18 @@ app.factory("userFactory", function ($q, FBCreds, $http) {
     defaultBoard.uid = currentUser;
     return $q((resolve,reject)=>{
       $http.post(`${FBCreds.databaseURL}/boards.json`, angular.toJson(defaultBoard))
-      .then((obj)=>{
+      .success((obj)=>{
 console.log("createFirstBoard obj: ", obj);
-//         let boardCollection = obj;
-//         Object.keys(boardCollection).forEach((key)=>{
-//           boardCollection[key].boardId = key;
-// console.log("createFirstBoard boardCollection: ", boardCollection);
-        // });
+        let boardCollection = obj;
+        Object.keys(boardCollection).forEach((key)=>{
+          boardCollection[key].boardId = key;
+console.log("createFirstBoard boardCollection: ", boardCollection);
+        });
         createFirstPin(currentUser, obj.data.name);
         resolve(obj);
-      // })
-      // .error((error)=>{
-      //   reject(error);
+      })
+      .error((error)=>{
+        reject(error);
       });
     });
   };
@@ -55,7 +55,7 @@ console.log("createFirstBoard obj: ", obj);
     defaultPin.boardId = boardId;
     return $q((resolve,reject)=>{
       $http.post(`${FBCreds.databaseURL}/pins.json`, angular.toJson(defaultPin))
-      .then((obj)=>{
+      .success((obj)=>{
 console.log("createFirstPin obj: ", obj);
         let pinCollection = obj;
         Object.keys(pinCollection).forEach((key)=>{
@@ -63,9 +63,9 @@ console.log("createFirstPin obj: ", obj);
 console.log("createFirstBoard pinCollection: ", pinCollection);
         });
         resolve(obj);
-      // })
-      // .error((error)=>{
-      //   reject(error);
+      })
+      .error((error)=>{
+        reject(error);
       });
     });
   };

@@ -1,6 +1,6 @@
 <div class="row">
 	<a id="newBoardBtn" href="#/createBoard">
-		<div class="col-sm-4 col-md-3">
+		<div class="col-sm-4 col-md-3 boardCard">
 		<span class="glyphicon glyphicon-plus" aria-label="true"></span>
 		</div>
 	</a>
@@ -10,7 +10,7 @@
 	<div ng-repeat="thing in boards">
 		<a ng-href="#/userBoard/{{thing.boardId}}">
 			<div class="col-sm-4 col-md-3 boardCard">
-				<div class="col-xs-12 boardCards">
+				<div class="col-xs-12">
 					<h3>{{thing.title}}</h3>
 				</div>
 			</a>
