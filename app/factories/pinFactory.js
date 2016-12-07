@@ -40,4 +40,29 @@ app.factory("pinStorage", function($http, FBCreds, $q){
 			});
 		});
 	};
+
+	let getBoardPins = (boardId) => {
+		return $q((resolve, reject)=>{
+			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardId"&equalTo="${boardId}"`)
+			.success((pinsObj)=>{
+				let pinCollection = pinsObj;
+				let tempArr = [];
+				Object.keys(pinCollection).forEach((key)=>{
+					pinCollection[key].id = key;
+					tempArr.push(pinCollection[key]);
+					pins = tempArr;
+				});
+				resolve(pins);
+			})
+			.error((error)=>{
+				reject(error);
+			});
+		});
+	};
+
+  return {
+    getAllPins,
+    getUserPinsList,
+    getBoardPins
+  };
 });
