@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Onodric/m6-04-shrooms-01#readme",
   "devDependencies": {
-    "angular": "^1.6.0-rc.2",
+    "angular": "^1.5.9",
     "angular-route": "^1.5.9",
     "bootstrap": "^3.3.7",
     "firebase": "^3.6.3",
