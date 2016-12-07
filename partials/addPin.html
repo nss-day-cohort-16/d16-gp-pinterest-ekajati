@@ -1,0 +1,24 @@
+<h2>Add New Pin</h2>
+<form>
+  <div class="form-group">
+    <label>Description</label>
+    <!-- TODO: Hook up this form to our JS for submitting -->
+    <input type="text" class="form-control" placeholder="Description" ng-model="" />
+  </div>
+  <div class="form-group">
+    <label>URL</label>
+    <input type="text" class="form-control" placeholder="url" ng-model="" />
+  </div>
+  <div class="form-group">
+    <label>Board</label>
+    <input type="text" class="form-control" placeholder="board" ng-model="" />
+  </div>
+  <!-- TODO: bind this button to a function -->
+  <button class="btn btn-default" ng-click="addNewPin()">submit</button>
+</form>
+
+
+<!--
+  .when("/addPin", {
+    templateUrl: "partials/addPin.html",
+    controller: "addPinsCtrl" -->
