@@ -1,0 +1,21 @@
+<div class="row">
+	<button type="button" id="newBoardBtn" class="col-sm-4 col-md-3" ng-click="boardForm()">
+		<span class="glyphicon glyphicon-plus" aria-label="true"></span>
+	</button>
+
+	<div id="addedBoards"></div>
+
+	<div class="col-sm-4 col-md-3" ng-repeat="thing in boards">
+		<a ng-href="#/boards/{{thing.id}}">
+			<div class="col-md-3 boardCards">
+				<h3>{{thing.title}}</h3>
+			</div>
+		</a>
+
+	</div>
+</div>
+
+
+		<!-- <button id="{{thing.id}}" class="col-md-3 boardCards" type="button" ng-click="viewBoard()">
+			<h3>{{thing.title}}</h3>
+		</button> -->
