@@ -11,9 +11,10 @@ app.controller("boardViewCtrl", function($scope, boardFactory, authFactory, $loc
 	}; 
 
 	//this would get called when the button on boardView is clicked
-	$scope.createBoard = function($scope.boardObj){
+	$scope.createBoard = function(){
 		boardFactory.postNewBoard($scope.boardObj).then((response)=>{
-			$location.url("#/boards") //can change this to reflect actual URL we'll use. 
+			$location.url("#/boards");
+			//can change this to reflect actual URL we'll use. 
 			//do we need $scope.$apply here?
 		});	
 	};
