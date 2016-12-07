@@ -3,27 +3,6 @@
 app.factory("pinStorage", function($http, FBCreds, $q){
 	let pins = [];
 
-// 	let getAllPins = function(){
-// 		return new Promise((resolve, reject)=>{
-// 			$http.get(`${FBCreds.databaseURL}/pins.json`)
-// 			.success((pinsObj)=>{
-// console.log("pinsObj: ", pinsObj);
-// 					let pinCollection = pinsObj;
-// 					let tempArray = [];
-// 					Object.keys(pinCollection).forEach((key)=>{
-// 						pinCollection[key].id = key;
-// 						tempArray.push(pinCollection[key]);
-// 						pins = tempArray;
-// console.log("pinsObj: ", pinsObj);
-// 					});
-// 					resolve(pins);
-// 				})
-// 			.error((error)=>{
-// 					reject();
-// 			});
-// 		});
-// 	};
-
 	let getAllPins = function(){
 		return $q((resolve, reject) => {
 console.log("URL is correct: ", FBCreds.databaseURL);
@@ -80,6 +59,12 @@ console.log("pinsObj: ", pinsObj);
 			});
 		});
 	};
+
+	let getBoardName = function(boardId){
+		return $q((resolve, reject)=>{
+			
+		})
+	}
 
   return {
     getAllPins,

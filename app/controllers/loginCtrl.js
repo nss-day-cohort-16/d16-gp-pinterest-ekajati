@@ -17,7 +17,7 @@ app.controller("loginCtrl", function($scope, authFactory, $window){
 
 	$scope.login = () => {
 		authFactory.loginUser($scope.account).then((userData)=>{
-			$window.location.href = "#/pins";
+			$window.location.href = "#/userBoard";
 		});
 	};
 

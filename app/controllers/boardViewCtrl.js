@@ -7,13 +7,13 @@ app.controller("boardViewCtrl", function($scope, boardFactory, authFactory, $loc
 	//idea here is to create an object that we can pass off to the http call to post the new board
 	$scope.boardObj = {
 		title: "",
-		uid: user.uid
+		uid: user
 	}; 
 
 	//this would get called when the button on boardView is clicked
 	$scope.createBoard = function(){
 		boardFactory.postNewBoard($scope.boardObj).then((response)=>{
-			$location.url("#/boards");
+			$location.url("#/userBoard");
 			//can change this to reflect actual URL we'll use. 
 			//do we need $scope.$apply here?
 		});	

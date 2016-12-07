@@ -1,12 +1,12 @@
 "use strict";
 
-app.controller("BoardPinsCtrl", function($scope, $routeParams, pinStorage, SearchTermData, AuthFactory){
+app.controller("BoardPinsCtrl", function($scope, $routeParams, pinStorage, SearchTermData, authFactory){
   //add in filter and auth factories
 
   $scope.searchText = SearchTermData;
   $scope.selectedBoard = {};
 
-  let user = AuthFactory.getUser();
+  let user = authFactory.getUser();
 
   pinStorage.getBoardPins($routeParams.boardId)
   .then((pinArray)=>{
