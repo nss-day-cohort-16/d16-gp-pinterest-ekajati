@@ -72,8 +72,9 @@ console.log("getBoardPins called with: ", boardId);
 	};
 
 	let deletePin = function(pinId){
+console.log("delete call: ", `${FBCreds.databaseURL}/pins/${pinId}`);
 		return $q((resolve, reject)=>{
-			$http.delete(`${FBCreds.databaseURL}/pins/${pinId}`)
+			$http.delete(`${FBCreds.databaseURL}/pins/${pinId}.json`)
 			.success((obj)=>{
 				resolve(obj);
 			})
@@ -86,6 +87,8 @@ console.log("getBoardPins called with: ", boardId);
   return {
     getAllPins,
     getUserPinsList,
-    getBoardPins
+    getBoardPins,
+    addPin,
+    deletePin
   };
 });

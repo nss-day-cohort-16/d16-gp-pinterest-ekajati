@@ -10,11 +10,12 @@
     <input type="text" class="form-control" placeholder="https://upload.wikimedia.org/wikipedia/commons/8/85/Close-up_of_a_cat.JPG" ng-model="newPin.url" />
   </div>
   <div class="btn btn-default">
+    <label>Choose a Board</label>
     <select 
-        ng-model="newPin.boardId" 
+        ng-model="test" 
         size="1" 
-        ng-options="item.id as item.title for item in boards | orderBy:'title'" 
-        ng-change="update(id)">
+        ng-options="item.title for item in boards | orderBy:'title'" 
+        ng-change="update()">
     </select>
   </div>
   <!-- TODO: bind this button to a function -->

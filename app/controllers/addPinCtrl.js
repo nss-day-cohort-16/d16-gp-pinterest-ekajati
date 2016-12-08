@@ -11,6 +11,7 @@ app.controller("addPinCtrl", function($scope, authFactory, $location, pinStorage
     boardId: "",
     uid: user
   };
+  $scope.test = {};
 
 console.log("addPin user: ", user);
 
@@ -20,9 +21,11 @@ console.log("boardObj: ", boardObj);
     $scope.boards = boardObj;
   });
 
-  $scope.update = function (board) {
-  console.log("selectedBoard: ", board);
-    $scope.newPin.boardId = board.id;
+  $scope.update = function () {
+  console.log("$scope.test: ", $scope.test);
+    $scope.newPin.boardId = $scope.test.boardId;
+    // $scope.newPin.boardId = board.id;
+  console.log("newPin before addbutton :", $scope.newPin);
   };
 
   $scope.addNewPin = function() {

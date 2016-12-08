@@ -52,7 +52,7 @@ app.factory("boardFactory", function($http, authFactory, FBCreds, $q){
 
 	let deleteBoard = function(boardId){
 		return $q((resolve, reject)=>{
-			$http.delete(`${FBCreds.databaseURL}/boards/${boardId}`)
+			$http.delete(`${FBCreds.databaseURL}/boards/${boardId}.json`)
 			.success((obj)=>{
 				resolve(obj);
 			})
@@ -62,5 +62,5 @@ app.factory("boardFactory", function($http, authFactory, FBCreds, $q){
 		});
 	};
 
-	return{postNewBoard, getUserBoards, getBoard};
+	return{postNewBoard, getUserBoards, getBoard, deleteBoard};
 });
