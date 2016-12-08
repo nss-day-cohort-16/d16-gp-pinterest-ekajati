@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("userBoardsCtrl", function($scope, boardFactory, authFactory, userFactory){
+app.controller("userBoardsCtrl", function($scope, boardFactory, authFactory, userFactory, $location){
 
 	let user = authFactory.getUser();
 
@@ -11,13 +11,11 @@ console.log("userBoardsCtrl: ", boardArray);
 //no $scope.$apply needed because $q function retrieved data
 	});
 
-  $scope.deleteBoard = function (event) {
-console.log("delete event: ", $(event.target).closest('.boardCard').attr("id"));
-    let boardId = $(event.target).closest('.boardCard').attr("id");
-    boardFactory.deleteBoard(boardId).
-    then((obj)=>{
-      $(`#${boardId}`).remove();
-    });
+  $scope.deleteBoard = function (boardId) {
+console.log("delete boardId: ", boardId);
+    boardFactory.deleteBoard(boardId);
+    $(`#${boardId}`).remove();
+    $location.url('/userBoard');
   };
 
 });
