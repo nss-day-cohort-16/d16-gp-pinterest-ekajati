@@ -1,17 +1,20 @@
 "use strict";
 
-app.controller("BoardPinsCtrl", function($scope, $routeParams, pinStorage, SearchTermData, AuthFactory){
+app.controller("BoardPinsCtrl", function($scope, $routeParams, pinStorage, SearchTermData, authFactory, boardFactory){
   //add in filter and auth factories
+  let user = authFactory.getUser();
 
   $scope.searchText = SearchTermData;
-  $scope.selectedBoard = {};
+  $scope.selectedBoard = "Untitled Board";
 
-  let user = AuthFactory.getUser();
+  boardFactory.getBoard($routeParams.boardId)
+  .then((boardObj)=>{
+    $scope.selectedBoard = boardObj.title;
+  });
 
   pinStorage.getBoardPins($routeParams.boardId)
   .then((pinArray)=>{
-    $scope.boardId = $routeParams.boardId;
     $scope.pins = pinArray;
-    //no $scope.$apply needed because $q function retrieved data
+//no $scope.$apply needed because $q function retrieved data
   });
 });

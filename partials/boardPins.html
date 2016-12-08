@@ -1,8 +1,8 @@
-<h2>{{boardId}}</h2>
+<h2>{{selectedBoard}}</h2>
 <div class="col-sm-4 col-md-3" ng-repeat="item in pins">
   <div id="{{item.id}}" data-pinId="{{item.id}}" class="col-xs-12 pinCard">
     <h3 data-pinTitle="{{item.title}}">{{item.title}}</h3>
-    <img src="{{item.url}}" alt="{{item.title}}" data-pinUrl="{{item.url}}">
+    <img ng-src="{{item.url}}" alt="{{item.title}}" data-pinUrl="{{item.url}}">
     <button class="btn btn-default savePin">Save This Pin</button>
     <button class="btn btn-danger deletePin">Delete This Pin</button>
   </div>

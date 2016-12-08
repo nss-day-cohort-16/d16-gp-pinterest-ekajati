@@ -3,7 +3,8 @@
 $threeD: 0 2px 5px;
 $roundy: 1em;
 
-.pinCard {
+.pinCard,
+.boardCard {
   background: $rgba-second4;
   box-shadow: $threeD $rgba-second1;
   // height: 30vh;
@@ -14,3 +15,4 @@ $roundy: 1em;
 .pinCard img {
   width: 100%;
 }
+

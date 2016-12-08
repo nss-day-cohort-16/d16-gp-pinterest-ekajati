@@ -22,15 +22,23 @@ app.config(function($routeProvider){
 	})
 	.when("/userBoard", {
 		templateUrl: "partials/userBoards.html",
-		controller: "userBoardsCtrl"		
+		controller: "userBoardsCtrl",
+		resolve: {isAuth}
 	})
 	.when("/addPin", {
 		templateUrl: "partials/addPin.html",
-		controller: "addPinCtrl"		
+		controller: "addPinCtrl",
+		resolve: {isAuth}
+	})
+	.when("/createBoard", {
+		templateUrl: "partials/createBoard.html",
+		controller: "boardViewCtrl",
+		resolve: {isAuth}
 	})
 	.when("/userBoard/:boardId", {
 		templateUrl: "partials/boardPins.html",
-		controller: "BoardPinsCtrl"		
+		controller: "BoardPinsCtrl",
+		resolve: {isAuth}
 	})
 	.when("/login", {
 		templateUrl: "partials/login.html",

@@ -1,15 +1,15 @@
 "use strict";
 
-app.factory("boardFactory", function($http, authFactory, FBCreds, boardViewCtrl, $q){
+app.factory("boardFactory", function($http, authFactory, FBCreds, $q){
 
 	let user = authFactory.getUser();
 	let boards = [];
+	let lastKnownBoard = {};
 
 	let postNewBoard = function(boardObj){
 		return $q((resolve, reject)=>{
 			$http.post(`${FBCreds.databaseURL}/boards.json`, angular.toJson(boardObj))
 			.success(()=>{
-console.log("Posted!: ", boardObj);
 				resolve();
 			})
 			.error((error)=>{
@@ -25,7 +25,7 @@ console.log("Posted!: ", boardObj);
 				let boardCollection = userBoardObj;
 				let tempArr = [];
 				Object.keys(boardCollection).forEach((key)=>{
-				  boardCollection[key].id = key;
+				  boardCollection[key].boardId = key;
 				  tempArr.push(boardCollection[key]);
 				  boards = tempArr;
 				});
@@ -37,5 +37,18 @@ console.log("Posted!: ", boardObj);
 		});
 	};
 
-	return{postNewBoard, getUserBoards};
+	let getBoard = function(boardId){
+		return $q((resolve, reject) =>{
+			$http.get(`${FBCreds.databaseURL}/boards/${boardId}.json`)
+		.success((boardObj)=>{
+			lastKnownBoard = boardObj;
+			resolve(lastKnownBoard);
+		})
+		.error((error)=>{
+			reject(error);
+		});
+	});
+};
+
+	return{postNewBoard, getUserBoards, getBoard};
 });
