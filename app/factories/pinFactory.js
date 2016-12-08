@@ -3,6 +3,18 @@
 app.factory("pinStorage", function($http, FBCreds, $q){
 	let pins = [];
 
+	let addPin = function(newPinObj){
+		return $q((resolve,reject)=>{
+			$http.post(`${FBCreds.databaseURL}/pins.json`, angular.toJson(newPinObj))
+			.success((obj)=>{
+				resolve(obj);
+			})
+			.error((error)=>{
+				reject(error);
+			});
+		});
+	};
+
 	let getAllPins = function(){
 		return $q((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/pins.json`)
