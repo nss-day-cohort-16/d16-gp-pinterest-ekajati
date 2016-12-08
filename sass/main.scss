@@ -24,5 +24,17 @@ $roundy: 1em;
 
 .pinCard img {
   width: 100%;
+  margin-bottom: 25px;
 }
 
+#wrapper {
+  border-radius: $roundy;
+}
+
+header {
+  margin-top: 10px;
+}
+
+#page-foot {
+  color: white;
+}

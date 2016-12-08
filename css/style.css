@@ -7,7 +7,7 @@ body {
   width: 90%;
   max-width: 1280px;
   background: #ffdeaa;
-  height: 85vh;
+  height: 75vh;
   overflow-y: auto;
   margin: 10vh auto 5vh auto; }
   #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5 {
@@ -58,6 +58,16 @@ body {
   text-align: center; }
 
 .pinCard img {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 25px; }
+
+#wrapper {
+  border-radius: 1em; }
+
+header {
+  margin-top: 10px; }
+
+#page-foot {
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */
