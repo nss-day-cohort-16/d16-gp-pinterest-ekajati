@@ -10,6 +10,7 @@ $roundy: 1em;
   // height: 30vh;
   border-radius: $roundy;
   margin-top: 1em;
+  height: 400px;
 }
 
 .boardCard .glyphicon {
@@ -18,11 +19,15 @@ $roundy: 1em;
 }
 
 .boardCard {
-  height: 25vh;
+  height: 250px;
   text-align: center;
 }
 
 .pinCard img {
   width: 100%;
+}
+
+.navDiv {
+  height: 66px;
 }
 
