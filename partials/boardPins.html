@@ -3,7 +3,7 @@
   <div id="{{item.id}}" data-pinId="{{item.id}}" class="col-xs-12 pinCard">
     <h3 data-pinTitle="{{item.title}}">{{item.title}}</h3>
     <img ng-src="{{item.url}}" alt="{{item.title}}" data-pinUrl="{{item.url}}">
-    <button class="btn btn-default savePin">Save This Pin</button>
-    <button class="btn btn-danger deletePin">Delete This Pin</button>
+    <button class="btn btn-default">Save This Pin</button>
+    <button class="btn btn-danger" ng-click="deletePin($index)">Delete This Pin</button>
   </div>
 </div>

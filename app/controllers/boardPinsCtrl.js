@@ -14,7 +14,18 @@ app.controller("BoardPinsCtrl", function($scope, $routeParams, pinStorage, Searc
 
   pinStorage.getBoardPins($routeParams.boardId)
   .then((pinArray)=>{
+console.log("boardPins: ", pinArray);
     $scope.pins = pinArray;
 //no $scope.$apply needed because $q function retrieved data
   });
+
+  $scope.deletePin = function (event) {
+console.log("delete event: ", event);
+    // pinStorage.deletePin(pinId).
+    // then((obj)=>{
+      // $(`#${pinId}`).remove();
+    // });
+  };
+
+
 });

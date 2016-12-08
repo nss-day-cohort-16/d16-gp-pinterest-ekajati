@@ -3,7 +3,7 @@
 		<h3>{{thing.title}}</h3>
 		<img ng-src="{{thing.url}}">
 		<button class="btn btn-default savePin">Save This Pin</button>
-		<button class="btn btn-danger deletePin">Delete This Pin</button>
+		<button class="btn btn-danger deletePin" ng-click="deletePin($index)">Delete This Pin</button>
 
 	</div>
 	

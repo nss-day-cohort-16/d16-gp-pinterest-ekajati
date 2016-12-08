@@ -49,8 +49,13 @@ body {
   border-radius: 1em;
   margin-top: 1em; }
 
+.boardCard .glyphicon {
+  margin: 8vh auto 0 auto;
+  font-size: 2em; }
+
 .boardCard {
-  height: 25vh; }
+  height: 25vh;
+  text-align: center; }
 
 .pinCard img {
   width: 100%; }

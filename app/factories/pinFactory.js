@@ -52,6 +52,7 @@ app.factory("pinStorage", function($http, FBCreds, $q){
 	};
 
 	let getBoardPins = function(boardId) {
+console.log("getBoardPins called with: ", boardId);
 		return $q((resolve, reject)=>{
 			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardId"&equalTo="${boardId}"`)
 			.success((pinsObj)=>{
@@ -63,6 +64,18 @@ app.factory("pinStorage", function($http, FBCreds, $q){
 					pins = tempArr;
 				});
 				resolve(pins);
+			})
+			.error((error)=>{
+				reject(error);
+			});
+		});
+	};
+
+	let deletePin = function(pinId){
+		return $q((resolve, reject)=>{
+			$http.delete(`${FBCreds.databaseURL}/pins/${pinId}`)
+			.success((obj)=>{
+				resolve(obj);
 			})
 			.error((error)=>{
 				reject(error);
