@@ -8,8 +8,7 @@ body {
   max-width: 1280px;
   background: #ffdeaa;
   height: 85vh;
-  overflow-y: auto;
-  margin: 10vh auto 5vh auto; }
+  overflow-y: auto; }
   #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5 {
     font-family: "Permanent Marker", cursive; }
 
@@ -47,17 +46,21 @@ body {
   background: rgba(116, 139, 167, 0.8);
   box-shadow: 0 2px 5px rgba(20, 49, 83, 0.8);
   border-radius: 1em;
-  margin-top: 1em; }
+  margin-top: 1em;
+  height: 400px; }
 
 .boardCard .glyphicon {
   margin: 8vh auto 0 auto;
   font-size: 2em; }
 
 .boardCard {
-  height: 25vh;
+  height: 250px;
   text-align: center; }
 
 .pinCard img {
   width: 100%; }
+
+.navDiv {
+  height: 66px; }
 
 /*# sourceMappingURL=style.css.map */
