@@ -40,15 +40,27 @@ app.factory("boardFactory", function($http, authFactory, FBCreds, $q){
 	let getBoard = function(boardId){
 		return $q((resolve, reject) =>{
 			$http.get(`${FBCreds.databaseURL}/boards/${boardId}.json`)
-		.success((boardObj)=>{
-			lastKnownBoard = boardObj;
-			resolve(lastKnownBoard);
-		})
-		.error((error)=>{
-			reject(error);
+			.success((boardObj)=>{
+				lastKnownBoard = boardObj;
+				resolve(lastKnownBoard);
+			})
+			.error((error)=>{
+				reject(error);
+			});
 		});
-	});
-};
+	};
+
+	let deleteBoard = function(boardId){
+		return $q((resolve, reject)=>{
+			$http.delete(`${FBCreds.databaseURL}/boards/${boardId}`)
+			.success((obj)=>{
+				resolve(obj);
+			})
+			.error((error)=>{
+				reject(error);
+			});
+		});
+	};
 
 	return{postNewBoard, getUserBoards, getBoard};
 });

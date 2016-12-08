@@ -11,6 +11,15 @@ console.log("userBoardsCtrl: ", boardArray);
 //no $scope.$apply needed because $q function retrieved data
 	});
 
+  $scope.deleteBoard = function (event) {
+console.log("delete event: ", $(event.target).closest('.boardCard').attr("id"));
+    let boardId = $(event.target).closest('.boardCard').attr("id");
+    boardFactory.deleteBoard(boardId).
+    then((obj)=>{
+      $(`#${boardId}`).remove();
+    });
+  };
+
 });
 		
 

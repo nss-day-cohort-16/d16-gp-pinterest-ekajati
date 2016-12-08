@@ -4,6 +4,6 @@
     <h3 data-pinTitle="{{item.title}}">{{item.title}}</h3>
     <img ng-src="{{item.url}}" alt="{{item.title}}" data-pinUrl="{{item.url}}">
     <button class="btn btn-default">Save This Pin</button>
-    <button class="btn btn-danger" ng-click="deletePin($index)">Delete This Pin</button>
+    <button class="btn btn-danger" ng-click="deletePin($event)">Delete This Pin</button>
   </div>
 </div>
