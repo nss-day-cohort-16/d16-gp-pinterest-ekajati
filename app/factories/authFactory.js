@@ -2,11 +2,9 @@
 
 app.factory("authFactory", function($q, userFactory){
 	let currentUser = null;
-
 	let createUser = function(userObj){
 		return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
 			.then(function(userObj){
-console.log("createUser userObj: ", userObj);
 				userFactory.setUpUser(userObj);
 			});
 	};

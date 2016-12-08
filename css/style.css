@@ -42,11 +42,20 @@ body {
     font-weight: bold;
     margin: auto; }
 
-.pinCard {
+.pinCard,
+.boardCard {
   background: rgba(116, 139, 167, 0.8);
   box-shadow: 0 2px 5px rgba(20, 49, 83, 0.8);
   border-radius: 1em;
   margin-top: 1em; }
+
+.boardCard .glyphicon {
+  margin: 8vh auto 0 auto;
+  font-size: 2em; }
+
+.boardCard {
+  height: 25vh;
+  text-align: center; }
 
 .pinCard img {
   width: 100%; }

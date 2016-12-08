@@ -4,6 +4,8 @@
 
 app.factory("userFactory", function ($q, FBCreds, $http) {
 
+  let user = null;
+
   let defaultBoard = {
     title: 'My First Board',
     uid: ""
@@ -17,6 +19,7 @@ app.factory("userFactory", function ($q, FBCreds, $http) {
   };
 
   let setUpUser = function (userObj) {
+    user = userObj.uid;
     let newUser = {email: userObj.email, uid: userObj.uid};
     return $q((resolve, reject)=>{
       $http.post(`${FBCreds.databaseURL}/users.json`, angular.toJson(newUser))
@@ -69,7 +72,16 @@ console.log("createFirstBoard pinCollection: ", pinCollection);
       });
     });
   };
+
+  let setUser = (name)=>{
+    user = name;
+    return user;
+  };
+
+  let getUser = ()=>{
+    return user;
+  };
  
- return {setUpUser};
+ return {setUpUser, getUser, setUser};
 
 });

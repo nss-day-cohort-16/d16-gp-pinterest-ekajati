@@ -1,24 +1,25 @@
 <div class="row">
-	<a id="newBoardBtn" href="#/createBoard">
-		<div class="col-sm-4 col-md-3 boardCard">
-		<span class="glyphicon glyphicon-plus" aria-label="true"></span>
-		</div>
-	</a>
-
-	<div id="addedBoards"></div>
-
-	<div ng-repeat="thing in boards">
-		<a ng-href="#/userBoard/{{thing.boardId}}">
-			<div class="col-sm-4 col-md-3 boardCard">
-				<div class="col-xs-12">
-					<h3>{{thing.title}}</h3>
+	<div class="col-xs-12">
+		
+		<a id="newBoardBtn" href="#/createBoard">
+			<div class="col-sm-4 col-md-3">
+				<div class="col-xs-12 boardCard">
+					<i class="glyphicon glyphicon-plus" aria-label="true"></i>
+					<h4>Add a Board</h4>
 				</div>
-			</a>
+			</div>
+		</a>
+
+		<div ng-repeat="thing in boards">
+			<div class="col-sm-4 col-md-3">
+				<a ng-href="#/userBoard/{{thing.boardId}}">
+					<div class="col-xs-12 boardCard">
+						<h3>{{thing.title}}</h3>
+					</div>
+				</a>
+				<button class="btn btn-danger" ng-click="deleteBoard(thing.boardId)">Delete This Board</button>
+			</div>
 		</div>
+
 	</div>
 </div>
-
-
-		<!-- <button id="{{thing.id}}" class="col-md-3 boardCards" type="button" ng-click="viewBoard()">
-			<h3>{{thing.title}}</h3>
-		</button> -->

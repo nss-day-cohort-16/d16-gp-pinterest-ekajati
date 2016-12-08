@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("loginCtrl", function($scope, authFactory, $window){
+app.controller("loginCtrl", function($scope, authFactory, userFactory, $window){
 
 	authFactory.logoutUser();//automatic logout
 
@@ -16,7 +16,9 @@ app.controller("loginCtrl", function($scope, authFactory, $window){
 	};
 
 	$scope.login = () => {
-		authFactory.loginUser($scope.account).then((userData)=>{
+		authFactory.loginUser($scope.account)
+		.then((userData)=>{
+console.log("loginUserData: ", userData);
 			$window.location.href = "#/userBoard";
 		});
 	};

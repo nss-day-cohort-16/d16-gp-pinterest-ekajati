@@ -3,6 +3,18 @@
 app.factory("pinStorage", function($http, FBCreds, $q){
 	let pins = [];
 
+	let addPin = function(newPinObj){
+		return $q((resolve,reject)=>{
+			$http.post(`${FBCreds.databaseURL}/pins.json`, angular.toJson(newPinObj))
+			.success((obj)=>{
+				resolve(obj);
+			})
+			.error((error)=>{
+				reject(error);
+			});
+		});
+	};
+
 	let getAllPins = function(){
 		return $q((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/pins.json`)
@@ -40,6 +52,7 @@ app.factory("pinStorage", function($http, FBCreds, $q){
 	};
 
 	let getBoardPins = function(boardId) {
+console.log("getBoardPins called with: ", boardId);
 		return $q((resolve, reject)=>{
 			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardId"&equalTo="${boardId}"`)
 			.success((pinsObj)=>{
@@ -58,9 +71,24 @@ app.factory("pinStorage", function($http, FBCreds, $q){
 		});
 	};
 
+	let deletePin = function(pinId){
+console.log("delete call: ", `${FBCreds.databaseURL}/pins/${pinId}`);
+		return $q((resolve, reject)=>{
+			$http.delete(`${FBCreds.databaseURL}/pins/${pinId}.json`)
+			.success((obj)=>{
+				resolve(obj);
+			})
+			.error((error)=>{
+				reject(error);
+			});
+		});
+	};
+
   return {
     getAllPins,
     getUserPinsList,
-    getBoardPins
+    getBoardPins,
+    addPin,
+    deletePin
   };
 });

@@ -2,9 +2,10 @@
 
 var app = angular.module("pinApp", ["ngRoute"]);
 
-let isAuth = function($q, authFactory){
+let isAuth = function(authFactory, $q){
 	$q(function(resolve, reject){
-		authFactory.isAuthenticated().then(function(user){
+		authFactory.isAuthenticated()
+		.then(function(user){
 			if (user){
 				resolve();
 			} else{

@@ -6,7 +6,7 @@ app.controller("allPinsCtrl", function($scope, pinStorage){
 	pinStorage.getAllPins()
 	.then((pinArray)=>{
 		$scope.pins = pinArray;
-console.log("pnsCtrl: ", pinArray);
-		//no $scope.$apply needed because $q function retrieved data
+//no $scope.$apply needed because $q function retrieved data
 	});
+
 });
